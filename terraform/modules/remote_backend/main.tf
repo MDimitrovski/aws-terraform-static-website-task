@@ -1,12 +1,12 @@
 # IAM User for Terraform
-resource "aws_iam_user" "terraform_user" {
+resource "aws_iam_user" "terraform_user1" {
   name = var.iam_user_name
 }
 
 # Attach AdministratorAccess policy to the IAM user
 resource "aws_iam_user_policy_attachment" "admin_policy_attachment" {
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
-  user       = aws_iam_user.terraform_user.id
+  user       = aws_iam_user.terraform_user1.id
 }
 
 # S3 Bucket for Terraform state
@@ -26,7 +26,7 @@ resource "aws_s3_bucket_policy" "s3_bucket_policy" {
         Action   = "s3:ListBucket",
         Resource = aws_s3_bucket.terraform_task_bucket.arn,
         Principal = {
-          AWS = aws_iam_user.terraform_user.arn
+          AWS = aws_iam_user.terraform_user1.arn
         }
       },
       {
@@ -34,7 +34,7 @@ resource "aws_s3_bucket_policy" "s3_bucket_policy" {
         Action   = ["s3:GetObject", "s3:PutObject"],
         Resource = "${aws_s3_bucket.terraform_task_bucket.arn}/*",
         Principal = {
-          AWS = aws_iam_user.terraform_user.arn
+          AWS = aws_iam_user.terraform_user1.arn
         }
       }
     ]
