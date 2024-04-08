@@ -7,3 +7,9 @@ variable "iam_user_name" {
 variable "bucket_name" {
   description = "My bucket name"
 }
+variable "web_bucket" {
+    description = "My web bucket"
+}
+variable "index_document" {
+    description = "HTML file"
+}

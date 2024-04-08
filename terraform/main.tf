@@ -17,6 +17,9 @@ module "backend" {
     bucket_name = var.bucket_name
 }
 
-output "iam_user_name" {
-    value = module.backend.iam_user_arn
+module "s3_web_main" {
+  source = "./modules/s3_web_main"
+  web_bucket = var.web_bucket
+  index_document = var.index_document
+  region = var.region
 }
