@@ -1,10 +1,9 @@
-<h1 align="center">Static Web Hosting on AWS Series: Terraform Modules & GitHub Actions</h1>
+<h1 align="center">Static Web Hosting on AWS S3 </h1>
 
 
 ## Tech Stack
 - Terraform
-- GitHub Actions
-- AWS (IAM, S3,)
+- AWS (IAM, S3)
 
 ## Project Steps Overview
 
@@ -46,25 +45,29 @@
 ## How it works
 
 #terraform init  :
-
+![terraform init](https://github.com/MDimitrovski/aws-terraform-static-website-task/assets/165828369/e3783386-6bdf-47af-938f-a93bb54e306c)
 
 #terraform plan  :
-
+![terraform plan](https://github.com/MDimitrovski/aws-terraform-static-website-task/assets/165828369/294249b1-4aef-4d04-a2da-0f40baec3598)
 
 #terraform apply -auto-approve :
-
+![terraform apply -auto-approve](https://github.com/MDimitrovski/aws-terraform-static-website-task/assets/165828369/02a482e3-8787-4ee3-86ae-a90376ebb565)
 
 #terraform output :
+![terraform output](https://github.com/MDimitrovski/aws-terraform-static-website-task/assets/165828369/585f382d-852a-4e9a-b074-3b26cf88e384)
 
 Successfully created s3 buckets: 
+![S3 buckets in AWS ](https://github.com/MDimitrovski/aws-terraform-static-website-task/assets/165828369/3f427791-ee0a-43ac-8c87-8a85d1cdb2a3)
 
 Enter the static website via the "web_url" link :
+![web url](https://github.com/MDimitrovski/aws-terraform-static-website-task/assets/165828369/48cd44f6-0163-4713-a9ba-4a71dc974acd)
 
-Opps doesn't work:
+Error 404 :
+![error 404](https://github.com/MDimitrovski/aws-terraform-static-website-task/assets/165828369/8a46a4f9-a009-47ed-a762-24e6474f6b2b)
 
-
-NO WORRIES use the aws s3 cp <index.html path> s3://<bucket_id>:
-
+NO WORRIES use the "aws s3 cp <index.html path> s3://<bucket_id>" :
+<img width="1007" alt="AWS cp command" src="https://github.com/MDimitrovski/aws-terraform-static-website-task/assets/165828369/7327e7b6-7b2a-44d0-b330-e42b5198dafb">
 
 HERE WE GO!!! 
 
+<img width="699" alt="Hello World!!" src="https://github.com/MDimitrovski/aws-terraform-static-website-task/assets/165828369/03798e7e-d4eb-4b8e-9e0e-909e169261ff">
