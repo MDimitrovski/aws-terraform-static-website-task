@@ -11,6 +11,6 @@ output "s3_bucket_arn" {
 
 output "web_url" {
     description = "URL of the static web"
-    value = "http:/${aws_s3_bucket.web_bucket.bucket}.s3--${var.region}.amazon.com"
+    value = "http://${aws_s3_bucket.web_bucket.bucket}.s3--${var.region}.amazon.com"
 
 }
